@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.time-select, .sound-picker,.player-container{
+    height: 80%;
+    /* flex shorhand for flex grow, flex shrink and flex widht -> wiht value 1 all takes their space evenly */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10;
+}
+
+.time-select{
+    /* background: lightblue; */
+}
+
+.player-container{
+    /* background: lightcoral; */
+
+    position: relative;
+}
+.player-container svg{
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    /* to make it exactly in the middle */
+    transform: translate(-50%,-50%) rotate(-90deg);
+    /* block the pointer events to reach the play btn */
+    pointer-events: none;
+}
+
+.time-display{
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    font-size: 50px;
+}
+
+
+.sound-picker{
+    /* background: lightgreen; */
+}
+
+
+video{
+    /* We want this to be on top */
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+    
+}
+
+.time-select button,
+.sound-picker button{
+    color: white;
+    width: 30%;
+    height: 10%;
+    outline: none;
+    background: none;
+    /* padding: 18px 36px; */
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.6s ease;
+}
+.time-select button:hover{
+    color: black;
+    background-color: white;
+}
+
+.sound-picker button{
+    border: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 30px;
+}
+
+.sound-picker button:nth-child(1){
+    background: #4972a1;
+}
+
+.sound-picker button:nth-child(2){
+    background: #a14f49;
+}
+
+.sound-picker button img{
+    height: 100%;
+}
